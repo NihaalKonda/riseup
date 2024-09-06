@@ -1,0 +1,1307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rise Up</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css" />
+    <script src="https://kit.fontawesome.com/98424b8b4f.js" crossorigin="anonymous"></script>
+
+</head>
+<style>
+    .center {
+        text-align: center;
+    }
+
+    .darkred {
+        background-color: #A61111 !important;
+        border: none;
+        color: white;
+    }
+
+    html {
+        background-color: #F3E0E0 !important;
+    }
+
+    #homePage h1 {
+        padding-top: 10px;
+        margin-right: 20px;
+        text-align: right;
+    }
+
+    #searchBar {
+        width: 50vw;
+        margin: auto;
+    }
+
+    #searchInput{
+        padding-right:30vw;
+    }
+
+    #submitSearch{
+        height: 6.3vh !important;
+    }
+
+    #searchBar span {
+        margin-top: 2vh;
+    }
+
+    #navBar {
+        background-color: #E55F5F !important;
+    }
+
+    #navBar a {
+        color: white !important;
+    }
+
+    #navBar a:hover {
+        background-color: rgb(175, 24, 24) !important;
+        transition: 0.3s;
+    }
+
+    #question {
+        text-align: right;
+        margin-right: 7vw;
+    }
+
+    .homeElements {
+        margin-top: -40vh;
+        margin-right: 4vw;
+        float: right;
+    }
+
+    #homeimage {
+        position: absolute;
+        top: 8vh;
+        left: 4vw;
+        width: 55vw;
+    }
+
+    #homePage #signIn {
+        margin-right: 7.5vw;
+    }
+
+    #searches {
+        margin-top: 85vh;
+        margin-left: 20px;
+        padding-bottom: 100px;
+    }
+
+    #featured {
+        margin-left: 70px;
+    }
+
+    #featuredSelected {
+        margin-left: 40px;
+    }
+
+    .tile {
+        float: left;
+        width: 20vw;
+        height: 40vh;
+        background-color: #e2d7d7;
+        margin-left: 20px !important;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    }
+
+    .tile span {
+        font-size: 3.5vw;
+        margin-top: 2vw;
+        margin-left: 2vw;
+        color: rgb(57, 175, 57);
+    }
+
+    .companyTitle {
+        font-size: 2vw;
+        margin-top: 1vw;
+        margin-left: 2.5vw;
+        content: '\A';
+        white-space: pre;
+    }
+
+    .companydescri {
+        margin-top: 4.75vw;
+        margin-left: -17vw;
+        font-size: 1.7vh;
+        width: 18vw;
+    }
+
+    #nextArrow {
+        font-size: 80px;
+        margin-top: calc(17.5vh);
+        margin-left: 40px;
+    }
+
+    .hiddenTitle {
+        color: #e2d7d7;
+    }
+
+    .seeMore{
+        position: relative;
+        top: 34vh;
+        left: -1vw;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, .3);
+    }
+</style>
+
+<style>
+    #loginPage{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #loginForm input{
+        width: 40vw;
+        margin-bottom: 20px;
+        height: 6vh;
+    }
+
+    #loginForm input:last-of-type{
+       font-size: 20px;
+    }
+
+    #loginForm p{
+        text-align: right;
+        margin-bottom: 10px;
+    }
+
+    #signupPage{
+        display: none;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #signupPage input{
+        width: 40vw;
+        margin-bottom: 5px;
+        height: 6vh;
+    }
+
+    #signupPage input:last-of-type{
+       font-size: 20px;
+    }
+</style>
+
+<style>
+    #aboutUs{
+        display: none;
+    }
+
+    #aboutUsImage{
+        width: 40vw;
+        margin-left: 20px;
+        margin-top: 10vh;
+    }
+    #aboutUs p{
+        width:50vw;
+        text-align: right;
+    }
+    .aboutUsElements{
+        margin-top: 40vh;
+        margin-right: 4vw;
+        float: right;
+    }
+
+</style>
+
+<style>
+    #businessPage{
+        display: none;
+    }
+
+    #businessPage h1{
+        text-align:center;
+    }
+    #businessPage h3{
+        margin-top: -10px;
+        text-align:center;
+        color: rgb(154, 154, 226);
+    }
+    #analytics{
+        display: flex;
+        justify-content: center;
+    }
+    .analyticTiles{
+        float: left;
+        width: 17.5vw;
+        height:50vh;
+        background-color: #e2d7d7;
+        margin-left: 20px !important;
+        border-radius: 10px;
+        text-align: center;
+    }
+    #searches1 {
+        margin-top: 5vh;
+        margin-left: 20px;
+        padding-bottom: 100px;
+    }
+
+    #searchBar1 {
+        margin: auto;
+        margin-top: 4vh;
+        width: 90vw;
+    }
+
+    #searchBar1 input {
+        border-radius: 15px !important;
+    }
+
+    .analyticTitle{
+        padding-top: 10px;
+        font-size: 30px;
+        text-align: center;
+        font-size: 30px;
+    }
+</style>
+
+<style>
+    #payforwardPage{
+        display: none;
+    }
+    #payForDescription{
+        text-align: center;
+        margin: auto;
+        width: 60vw;
+    }
+    #payforForm{
+        display: flex;
+        justify-content: center;
+    }
+    .payforTile{
+        margin-top: 4vw;
+        float: left;
+        width: 40vw;
+        height: 15vh;
+        background-color: #F3E0E0;
+        margin-left: 40px !important;
+        border-radius: 10px;
+    }
+
+    #payMoneyBar input{
+        height: 10vh;
+        border-radius: 20px;
+    }
+    #payMoneyBar span {
+        margin-top: 1.5vh;
+    }
+    #paySearchBar input{
+        height: 10vh;
+        border-radius: 20px;
+    }
+    #paySearchBar span {
+        margin-top: 1.5vh;
+    }
+
+    #moneyAmount{
+        float: left;
+        margin-top: 1vh;
+        width: 10vw !important;
+        font-size: 20px;
+    }
+
+    #selectBusiness{
+        float: right;
+        margin-top: 1vh;
+        width: 10vw !important;
+    }
+
+    #loanImage{
+        display: flex;
+        justify-content: center;
+        position: absolute;
+        margin-top: 20vh;
+        width: 15vw;
+        margin-left: 20px;
+    }
+    #moneyAmountSelected{
+        background-color: #F3E0E0 !important;
+        border: none;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+    #selectBusinessSelected{
+        float: right;
+        background-color: #F3E0E0 !important;
+        border: none;
+        margin-left: 20px;
+        margin-top: 10px;
+    }
+
+    #payForward{
+        margin-top: 35vh;
+        margin-left: 31vw;
+        width: 20vw;
+        height: 5vw;
+        font-size: 30px;
+    }
+</style>
+
+<style>
+    #searchPage{
+        display: none;
+    }
+
+    #searchBar2 {
+        margin: auto;
+        margin-top: 0.5vh;
+        width: 90vw;
+    }
+
+    #searchBar2 input {
+        padding-top: 35px;
+        padding-bottom: 35px;
+        border-radius: 15px !important;
+    }
+
+    #searchBar2 span {
+        padding-top: 10px;
+    }
+</style>
+
+<body>
+    <nav id="navBar" class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <img style="padding: 5px;" src="riseup.png" width="50" height="28">
+            </a>
+
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+                data-target="navbarBasicExample">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+                <a id="homeButton" class="navbar-item">
+                    Home
+                </a>
+
+                <a id="aboutUsButton" class="navbar-item">
+                    About Us
+                </a>
+
+                <a id="payForwardButton" class="navbar-item">
+                    Pay It Forward
+                </a>
+            </div>
+
+            <div class="navbar-end">
+                <div class="navbar-item">
+                    <div class="buttons">
+                        <a id="logIn" class="button darkred">
+                            Log in
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="homePage">
+        <img id="homeimage" src="https://www.bamboohr.com/images/small-business/store-min.png">
+        <div class="homeElements">
+            <h1 style="font-size: 100px;" class="title is-1">Rise Up</h1>
+            <div class="field">
+                <p id="searchBar" class="control has-icons-left has-icons-right">
+                    <form action="{{url_for('business_nav')}}" method="post">
+
+
+                        <div class="field has-addons">
+                            <div class="control">
+                                <input id="searchInput" class="input is-large" type="text" placeholder="Search Keywords" name="business_search" autocomplete="off">
+                            </div>
+                            <div class="control">
+                                <input id="submitSearch" type="submit" class="button is-danger" value="Search">
+                            </div>
+                        </div>
+
+                    </form>
+                </p>
+            </div>
+
+            <h6 id="question" class="title is-6 center">Are you a business?</h6>
+            <div class="buttons has-addons is-right">
+                <button id="signIn" class="button is-rounded darkred is-medium">Sign Up</button>
+            </div>
+        </div>
+
+        <div id="searches">
+            <div id="featuredSelected" class="field is-grouped">
+                <p class="control">
+                    <button class="button is-danger">
+                        Sponsored
+                    </button>
+                </p>
+                <p class="control">
+                    <button class="button is-danger">
+                        Most Viewed
+                    </button>
+                </p>
+                <p class="control">
+                    <button class="button is-danger">
+                        Trending
+                    </button>
+                </p>
+            </div>
+            <br>
+            <div id="featured">
+                <div class="tile">
+                    <span class="icon is-left">
+                        <i class="fas fa-seedling"></i>
+                    </span>
+                    <p class="companyTitle"><b>On the Grow</b></p>
+                    <br>
+                    <p class="companydescri">The mission of On the Grow is to reduce carbon emmisions. Users will be
+                        able to take steps to combat
+                        global warming through a playful and competitive environment. The users will earn points for
+                        steps they
+                        take to reduce their carbon footprint, and can try to earn more points tan friends. Points will
+                        be tracked
+                        on a leaderboard.</p>
+                    <button id="onTheGrowButton" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(72, 72, 224);" class="icon is-left">
+                        <i class="fas fa-store"></i>
+                    </span>
+                    <p class="companyTitle"><b>Frescas<p class="companyTitle hiddenTitle">aaa</p></b></p>
+                    <br>
+                    <p class="companydescri">In light of COVID-19, farmers have been barred from selling their goods due
+                        to restrictions
+                        in meeting with local customers. As such, Frescas' mission is to provide an online platform
+                        where farmers can
+                        reach their customers locally without the restrictions of the virus.</p>
+
+                    <button id="frescasButton" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(212, 59, 59);" class="icon is-left">
+                        <i class="fas fa-tools"></i>
+                    </span>
+                    <p class="companyTitle"><b>GarardSale<p class="companyTitle hiddenTitle"></p></b></p>
+                    <br>
+                    <p class="companydescri">GarardSale is a garage sale for gardening and hardware supplies. However,
+                        due to COVID-19,
+                        GarardSale has moved online, where customers can shop and order items within the safety of their
+                        homes. They
+                        offer discounts for companies buying in bulk. </p>
+
+                    <button id="garardSaleButton" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(216, 155, 41)" class="icon is-left">
+                        <i class="fas fa-paw"></i>
+                    </span>
+                    <p class="companyTitle"><b>Tim's PetCare</b></p>
+                    <br>
+                    <p class="companydescri">Tim's PetCare is a local company that specializes in caring for your pets
+                        while you
+                        while you are unavailable. With top-notch care, your pet will be feeling extremely satisfied.
+                        With COVID-19
+                        restrictions however, customers, using masks, will drop off their pet in a waiting area,and they
+                        will come
+                        to pick them up while keeping distance and doing our jobs.</p>
+                    <button id="timpetcareButton" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+
+                <span id="nextArrow" class="icon is-left">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="loginPage">
+        <h1 style="text-align: center; font-size: 80px;" class="title is-1">Log In</h1>
+        <div id="loginForm">
+
+            <form action="{{url_for('home')}}" method="post">
+                <div class="field">
+                    <label class="label">Email</label>
+                    <div class="control">
+                        <input class="input" type="email" placeholder="example@gmail.com" name="email_signup">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Password</label>
+                    <div class="control">
+                        <input class="input" type="password" placeholder="password" name="password_signup">
+                    </div>
+                </div>
+                <input type="submit" class="button is-danger" value="Submit">
+            </form>
+
+            <p>Don't Have an Account?</p>
+            <div class="buttons has-addons is-right">
+                <button id="signIn2" class="button is-rounded darkred is-medium">Sign Up</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="signupPage">
+        <h1 style="text-align: center; font-size: 80px;" class="title is-1">Sign Up</h1>
+        <form action="{{url_for('signup_func')}}" method="post">
+            <div class="field">
+                <label class="label">Company Name</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="GarardSale" name="name_signup">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Email</label>
+                <div class="control">
+                    <input class="input" type="email" placeholder="example@gmail.com" name="email_signup">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Password</label>
+                <div class="control">
+                    <input class="input" type="password" placeholder="password" name="password_signup">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Keywords</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="food, gardening" name="keyword_signup">
+                </div>
+            </div>
+            <div class="field">
+                <label class="label">Location</label>
+                <div class="control">
+                    <input class="input" type="text" placeholder="City, State" name="location_signup">
+                </div>
+            </div>
+            <input type="submit" class="button is-danger" value="Submit">
+        </form>
+
+    </div>
+
+    <div id="aboutUs">
+        <img id="aboutUsImage" src="https://visionszone.com/wp-content/uploads/2020/04/about-us.png">
+        <div class="aboutUsElements">
+            <h1 style="font-size: 100px;" class="title is-1">About Us</h1>
+            <p>During these dark times with the worldwide pandemic COVID-19, our community has shifted our focus
+                towards death rates and health precautions. Yet, with all this worry for our friends and family, we tend to
+                overlook some of the people and establishments who suffer even more than we do; small businesses. Succeeding in
+                the corporate world with small startup ideas or establishments is especially hard to do, as these companies lack
+                the resources to advertise and market their ideas or products. That's why our mission at On The Rise is to provide
+                a platform for these small businesses to sell their products, so they too can minimize the damage the coronavirus has
+                done to them.</p>
+        </div>
+    </div>
+
+    <div id="businessPage">
+        <h1 id="businessPageTitle" style="font-size: 70px;" class="title is-1">On The Grow</h1>
+        <h3 style="font-size: 40px;" class="title is-1">Analytics</h3>
+
+        <div id="analytics">
+            <div class="analyticTiles">
+                <p class="analyticTitle">
+                    <span class="icon is-medium">
+                        <i class="fas fa-search-location"></i>
+                    </span>
+                     Search Count
+                </p>
+                <div id="searchCountText">
+                    <p style="font-size: 80px;" id="searchNum" >80</p>
+                    <p style="font-size: 20px;" > Search Results</p>
+                    <br>
+                    <p style="font-size: 20px;" > Keyword (food):</p>
+                    <p style="font-size: 15px;" > 35 Searches</p>
+                    <p style="font-size: 20px;" > Keyword (gardening):</p>
+                    <p style="font-size: 15px;" > 45 Searches</p>
+                </div>
+            </div>
+
+            <div class="analyticTiles">
+                <p class="analyticTitle">
+                    <span class="icon is-medium">
+                        <i class="fas fa-mouse"></i>
+                    </span>
+                     Clicks
+                </p>
+                <div id="clickNumText">
+                    <p style="font-size: 80px;" id="clickNum" >57</p>
+                    <p style="font-size: 20px;" >Specific Clicks</p>
+                    <br>
+                    <p style="font-size: 20px;" > Keyword (food):</p>
+                    <p style="font-size: 15px;" > 33 Clicks</p>
+                    <p style="font-size: 20px;" > Keyword (gardening):</p>
+                    <p style="font-size: 15px;" > 24 Clicks</p>
+                </div>
+            </div>
+
+            <div class="analyticTiles">
+
+                <p class="analyticTitle">
+                    <span class="icon is-medium">
+                        <i class="fas fa-shopping-cart"></i>
+                    </span>
+                     Products Sold
+                </p>
+                <div id="products">
+                    <p style="font-size: 25px;" id="clickNum" >Total: $120</p>
+                    <br>
+                    <p style="font-size: 20px;" >Recents:</p>
+                    <p style="font-size: 15px;" >shivenpandey21: $50</p>
+                    <p style="font-size: 15px;" >sonnylowe23: $10</p>
+                    <p style="font-size: 15px;" >nihaalkonda24: $40</p>
+                    <p style="font-size: 15px;" >josephp: $20</p>
+                </div>
+            </div>
+
+            <div class="analyticTiles">
+                <p class="analyticTitle">
+                    <span class="icon is-medium">
+                        <i class="fas fa-money-bill-wave"></i>
+                    </span>
+                     Loans
+                </p>
+                <div id="LoansText">
+                    <p style="font-size: 25px;" id="amountNum" >Total: $2500</p>
+                    <br>
+                    <p style="font-size: 20px;" >Recents:</p>
+                    <p style="font-size: 15px;" >bestbuyer40: $500</p>
+                    <p style="font-size: 15px;" >invester101: $700</p>
+                    <p style="font-size: 15px;" >stockmarket2: $800</p>
+                    <p style="font-size: 15px;" >econRush: $500</p>
+                </div>
+            </div>
+
+            <div class="analyticTiles">
+                <p class="analyticTitle">
+                    <span class="icon is-medium">
+                        <i class="fas fa-spell-check"></i>
+                    </span>
+                     Keywords
+                </p>
+                <div id="keywordsText">
+                    <br>
+                    <p style="font-size: 20px;" >Food</p>
+                    <p style="font-size: 20px;" >Gardening</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="field">
+            <p id="searchBar1" class="control has-icons-left has-icons-right">
+                <input class="input is-large" type="email" placeholder="Search More Local Businesses">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+            </p>
+        </div>
+
+        <div id="searches1">
+            <div id="featuredSelected" class="field is-grouped">
+                <p class="control">
+                    <button class="button is-danger">
+                        Sponsored
+                    </button>
+                </p>
+                <p class="control">
+                    <button class="button is-danger">
+                        Most Viewed
+                    </button>
+                </p>
+                <p class="control">
+                    <button class="button is-danger">
+                        Trending
+                    </button>
+                </p>
+            </div>
+            <br>
+            <div id="featured">
+                <div class="tile">
+                    <span class="icon is-left">
+                        <i class="fas fa-seedling"></i>
+                    </span>
+                    <p class="companyTitle"><b>On the Grow</b></p>
+                    <br>
+                    <p class="companydescri">The mission of On the Grow is to reduce carbon emmisions. Users will be
+                        able to take steps to combat
+                        global warming through a playful and competitive environment. The users will earn points for
+                        steps they
+                        take to reduce their carbon footprint, and can try to earn more points tan friends. Points will
+                        be tracked
+                        on a leaderboard.</p>
+                    <button id="onTheGrowButton1" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(72, 72, 224);" class="icon is-left">
+                        <i class="fas fa-store"></i>
+                    </span>
+                    <p class="companyTitle"><b>Frescas<p class="companyTitle hiddenTitle">aaa</p></b></p>
+                    <br>
+                    <p class="companydescri">In light of COVID-19, farmers have been barred from selling their goods due
+                        to restrictions
+                        in meeting with local customers. As such, Frescas' mission is to provide an online platform
+                        where farmers can
+                        reach their customers locally without the restrictions of the virus.</p>
+
+                    <button id="frescasButton1" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(212, 59, 59);" class="icon is-left">
+                        <i class="fas fa-tools"></i>
+                    </span>
+                    <p class="companyTitle"><b>GarardSale<p class="companyTitle hiddenTitle"></p></b></p>
+                    <br>
+                    <p class="companydescri">GarardSale is a garage sale for gardening and hardware supplies. However,
+                        due to COVID-19,
+                        GarardSale has moved online, where customers can shop and order items within the safety of their
+                        homes. They
+                        offer discounts for companies buying in bulk. </p>
+
+                    <button id="garardSaleButton1" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                <div class="tile">
+                    <span style="color: rgb(216, 155, 41)" class="icon is-left">
+                        <i class="fas fa-paw"></i>
+                    </span>
+                    <p class="companyTitle"><b>Tim's PetCare</b></p>
+                    <br>
+                    <p class="companydescri">Tim's PetCare is a local company that specializes in caring for your pets
+                        while you
+                        while you are unavailable. With top-notch care, your pet will be feeling extremely satisfied.
+                        With COVID-19
+                        restrictions however, customers, using masks, will drop off their pet in a waiting area,and they
+                        will come
+                        to pick them up while keeping distance and doing our jobs.</p>
+                    <button id="timpetcareButton1" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+
+                <span id="nextArrow" class="icon is-left">
+                    <i class="fas fa-chevron-right"></i>
+                </span>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+        </div>
+    </div>
+
+    <div id="payforwardPage">
+        <h1 style="text-align: center; font-size: 80px;" class="title is-1">Pay It Forward</h1>
+        <p id="payForDescription">Pay It Forward is a feature introduced to provide even more support to the smallest startups or establishements.
+           With Pay It Forward, you will be able to choose a company to give a loan to (the amount is your choice). In return,
+           you will get a gift card for their specific company. </p>
+        <form id="payforForm" action="{{url_for('payforward')}}" method="post">
+            <div class="payforTile">
+                <div class="field">
+                    <p id="payMoneyBar" class="control has-icons-left has-icons-right">
+                        <input class="input is-large" type="number" placeholder="$100">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-dollar-sign"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                    <!-- <button type='Button' onclick='return false;' id="moneyAmount" class="button is-rounded darkred is-medium">Select</button>
+                    <button type='Button' onclick='return false;' id="moneyAmountSelected" class="button is-rounded is-medium">Selected Amount: $0</button> -->
+                    <button type="submit" id="payForward" class="button is-rounded darkred is-medium" name="pay_submit">Pay It Forward</button>
+                </div>
+            </div>
+            <div class="payforTile">
+                <div class="field">
+                    <p id="paySearchBar" class="control has-icons-left has-icons-right">
+                        <input class="input is-large" type="text" placeholder="Search Local Businesses" name="company_name">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-store"></i>
+                        </span>
+                        <span class="icon is-small is-right">
+                            <i class="fas fa-check"></i>
+                        </span>
+                    </p>
+                    <!-- <button type='Button' onclick='return false;' id="selectBusiness" class="button is-rounded darkred is-medium">Select</button>
+                    <button type='Button' onclick='return false;' id="selectBusinessSelected" class="button is-rounded is-medium">Selected Business: None</button> -->
+                </div>
+            </div>
+            <img id="loanImage" src="https://www.flaticon.com/svg/static/icons/svg/2660/2660516.svg">
+        </form>
+    </div>
+
+    <div id="searchPage">
+        <h1 style="margin-left: 6vw; margin-top: 2vh; text-align: left; font-size: 50px;" class="title is-1">Results</h1>
+
+        <div class="field">
+            <p id="searchBar2" class="control has-icons-left has-icons-right">
+                <input class="input is-large" type="email" placeholder="Search More Local Businesses">
+                <span class="icon is-small is-left">
+                    <i class="fas fa-search"></i>
+                </span>
+                <span class="icon is-small is-right">
+                    <i class="fas fa-check"></i>
+                </span>
+            </p>
+        </div>
+        <br>
+
+        <div id="featured">
+            <div id="resultTiles">
+
+            </div>
+        </div>
+    </div>
+
+<!-- style="display: none;" -->
+    <div style="display:none">
+        <ul class="namekeydict" style="list-style:none">
+            Name Dict: <li id="allBusinesses">{{namekeydict}}</li>
+        </ul>
+        <ul class="business_results" style="list-style:none">
+                Business Results:<li id="searchResults">{{business_results}}</li>
+        </ul>
+        <ul class="donations" style="list-style:none">
+            Donation Results:<li id="donationResults">{{donations}}</li>
+        </ul>
+    </div>
+</body>
+
+    <script>
+        console.log("hihiihiih");
+        let homePage = document.getElementById("homePage");
+        let loginPage = document.getElementById("loginPage");
+        let signupPage = document.getElementById("signupPage");
+        let aboutUs = document.getElementById("aboutUs");
+        let businessPage = document.getElementById("businessPage");
+        let payforwardPage = document.getElementById("payforwardPage")
+        let searchPage = document.getElementById("searchPage");
+
+        console.log(homeButton);
+        console.log();
+
+        function hideAllPages(){
+            loginPage.style.display = "none";
+            homePage.style.display = "none";
+            aboutUs.style.display = "none";
+            signupPage.style.display = "none";
+            businessPage.style.display = "none";
+            payforwardPage.style.display = "none";
+            searchPage.style.display = "none";
+        }
+
+        homeButton.onclick = function(){
+            console.log("home clicked");
+            hideAllPages();
+            homePage.style.display = "block";
+        }
+
+        logIn.onclick = function(){
+            console.log("login clicked");
+            hideAllPages();
+            loginPage.style.display = "block";
+        }
+
+        signIn.onclick = function(){
+            console.log("signup clicked");
+            hideAllPages();
+            signupPage.style.display = "block";
+        }
+
+        signIn2.onclick = function(){
+            console.log("signup clicked");
+            hideAllPages();
+            signupPage.style.display = "block";
+        }
+
+        aboutUsButton.onclick = function(){
+            hideAllPages();
+            aboutUs.style.display = "block";
+        }
+
+        payForwardButton.onclick = function(){
+            hideAllPages();
+            payforwardPage.style.display = "block";
+        }
+
+        let businessPageTitle = document.getElementById("businessPageTitle");
+        let searchCountText = document.getElementById("searchCountText");
+        let clickNumText = document.getElementById("clickNumText");
+        let LoansText= document.getElementById("LoansText");
+        let keywordsText = document.getElementById("keywordsText");
+        let products = document.getElementById("products");
+
+        function onTheGrowClick(){
+            console.log("onthegrow")
+            hideAllPages();
+            businessPage.style.display = "block";
+
+            businessPageTitle.innerText = "On The Grow";
+            searchCountText.innerHTML = `
+                <p style="font-size: 80px;" id="searchNum" >80</p>
+                <p style="font-size: 20px;" > Search Results</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (food):</p>
+                <p style="font-size: 15px;" > 35 Searches</p>
+                <p style="font-size: 20px;" > Keyword (gardening):</p>
+                <p style="font-size: 15px;" > 45 Searches</p>
+            `;
+
+            clickNumText.innerHTML = `
+                <p style="font-size: 80px;" id="clickNum" >57</p>
+                <p style="font-size: 20px;" >Specific Clicks</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (food):</p>
+                <p style="font-size: 15px;" > 33 Clicks</p>
+                <p style="font-size: 20px;" > Keyword (gardening):</p>
+                <p style="font-size: 15px;" > 24 Clicks</p>
+            `;
+
+            LoansText.innerHTML = `
+                <p style="font-size: 25px;" id="amountNum" >Total: $2500</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >bestbuyer40: $500</p>
+                <p style="font-size: 15px;" >invester101: $700</p>
+                <p style="font-size: 15px;" >stockmarket2: $800</p>
+                <p style="font-size: 15px;" >econRush: $500</p>
+            `;
+            products.innerHTML = `
+            <p style="font-size: 25px;" id="clickNum" >Total: $120</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >shivenpandey21: $50</p>
+                <p style="font-size: 15px;" >sonnylowe23: $10</p>
+                <p style="font-size: 15px;" >nihaalkonda24: $40</p>
+                <p style="font-size: 15px;" >josephp: $20</p>
+            `
+            keywordsText.innerHTML = `
+                <br>
+                <p style="font-size: 20px;" >Food</p>
+                <p style="font-size: 20px;" >Gardening</p>
+            `;
+        }
+        function frescasButtonClick(){
+            console.log("frescas")
+            hideAllPages();
+            businessPage.style.display = "block";
+
+            businessPageTitle.innerText = "Frescas";
+            searchCountText.innerHTML = `
+                <p style="font-size: 80px;" id="searchNum" >63</p>
+                <p style="font-size: 20px;" > Search Results</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (farmers):</p>
+                <p style="font-size: 15px;" > 18 Searches</p>
+                <p style="font-size: 20px;" > Keyword (market):</p>
+                <p style="font-size: 15px;" > 45 Searches</p>
+            `;
+
+            clickNumText.innerHTML = `
+                <p style="font-size: 80px;" id="clickNum" >59</p>
+                <p style="font-size: 20px;" >Specific Clicks</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (farmers):</p>
+                <p style="font-size: 15px;" > 12 Clicks</p>
+                <p style="font-size: 20px;" > Keyword (market):</p>
+                <p style="font-size: 15px;" > 47 Clicks</p>
+            `;
+
+            LoansText.innerHTML = `
+                <p style="font-size: 25px;" id="amountNum" >Total: $17250</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >bestbuyer40: $3200</p>
+                <p style="font-size: 15px;" >invester101: $1200</p>
+                <p style="font-size: 15px;" >stockmarket2: $6300</p>
+                <p style="font-size: 15px;" >econRush: $300</p>
+            `;
+            products.innerHTML = `
+            <p style="font-size: 25px;" id="clickNum" >Total: $5250</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >nihaalkonda24: $120</p>
+                <p style="font-size: 15px;" >sonnylowe23: $75</p>
+                <p style="font-size: 15px;" >shivenpandey21:: $340</p>
+                <p style="font-size: 15px;" >josephp: $23</p>
+            `
+            keywordsText.innerHTML = `
+                <br>
+                <p style="font-size: 20px;" >Farmers</p>
+                <p style="font-size: 20px;" >Market</p>
+            `;
+        }
+        function garardSaleClick(){
+            console.log("garardSale")
+            hideAllPages();
+            businessPage.style.display = "block";
+
+            businessPageTitle.innerText = "Garard Sale";
+            searchCountText.innerHTML = `
+                <p style="font-size: 80px;" id="searchNum" >35</p>
+                <p style="font-size: 20px;" > Search Results</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (hardware):</p>
+                <p style="font-size: 15px;" > 15 Searches</p>
+                <p style="font-size: 20px;" > Keyword (repair):</p>
+                <p style="font-size: 15px;" > 20 Searches</p>
+            `;
+
+            clickNumText.innerHTML = `
+                <p style="font-size: 80px;" id="clickNum" >17</p>
+                <p style="font-size: 20px;" >Specific Clicks</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (hardware):</p>
+                <p style="font-size: 15px;" > 10 Clicks</p>
+                <p style="font-size: 20px;" > Keyword (repair):</p>
+                <p style="font-size: 15px;" > 7 Clicks</p>
+            `;
+
+            LoansText.innerHTML = `
+                <p style="font-size: 25px;" id="amountNum" >Total: $750</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >invester101: $200</p>
+                <p style="font-size: 15px;" >econRush: $100</p>
+                <p style="font-size: 15px;" >stockmarket2: $250</p>
+                <p style="font-size: 15px;" >bestbuyer40: $200</p>
+            `;
+            products.innerHTML = `
+            <p style="font-size: 25px;" id="clickNum" >Total: $70</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >josephp: $15</p>
+                <p style="font-size: 15px;" >shivenpandey21: $25</p>
+                <p style="font-size: 15px;" >nihaalkonda24: $20</p>
+                <p style="font-size: 15px;" >sonnylowe23: $20</p>
+            `
+            keywordsText.innerHTML = `
+                <br>
+                <p style="font-size: 20px;" >Hardware</p>
+                <p style="font-size: 20px;" >Repair</p>
+            `;
+        }
+        function timpetcareClick(){
+            console.log("timspetcare")
+            hideAllPages();
+            businessPage.style.display = "block";
+
+            businessPageTitle.innerText = "Tim's Pet Care";
+            searchCountText.innerHTML = `
+                <p style="font-size: 80px;" id="searchNum" >50</p>
+                <p style="font-size: 20px;" > Search Results</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (pet):</p>
+                <p style="font-size: 15px;" > 40 Searches</p>
+                <p style="font-size: 20px;" > Keyword (exercise):</p>
+                <p style="font-size: 15px;" > 10 Searches</p>
+            `;
+
+            clickNumText.innerHTML = `
+                <p style="font-size: 80px;" id="clickNum" >42</p>
+                <p style="font-size: 20px;" >Specific Clicks</p>
+                <br>
+                <p style="font-size: 20px;" > Keyword (pet):</p>
+                <p style="font-size: 15px;" > 33 Clicks</p>
+                <p style="font-size: 20px;" > Keyword (exercise):</p>
+                <p style="font-size: 15px;" > 9 Clicks</p>
+            `;
+
+            LoansText.innerHTML = `
+                <p style="font-size: 25px;" id="amountNum" >Total: $550</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >econRush: $150</p>
+                <p style="font-size: 15px;" >bestbuyer40: $150</p>
+                <p style="font-size: 15px;" >investor101: $75</p>
+                <p style="font-size: 15px;" >stockmarket2: $175</p>
+            `;
+            products.innerHTML = `
+            <p style="font-size: 25px;" id="clickNum" >Total: $55</p>
+                <br>
+                <p style="font-size: 20px;" >Recents:</p>
+                <p style="font-size: 15px;" >josephp: $22</p>
+                <p style="font-size: 15px;" >nihaalkonda24: $14</p>
+                <p style="font-size: 15px;" >sonnylowe23: $14</p>
+                <p style="font-size: 15px;" >shivenpandey21: $5</p>
+            `
+            keywordsText.innerHTML = `
+                <br>
+                <p style="font-size: 20px;" >pet</p>
+                <p style="font-size: 20px;" >exercise</p>
+            `;
+        }
+
+        onTheGrowButton.onclick = function(){
+            onTheGrowClick();
+        }
+
+        frescasButton.onclick = function(){
+            frescasButtonClick();
+        }
+
+        garardSaleButton.onclick = function(){
+            garardSaleClick();
+        }
+
+        timpetcareButton.onclick = function(){
+            timpetcareClick();
+        }
+
+        onTheGrowButton1.onclick = function(){
+            onTheGrowClick();
+        }
+
+        frescasButton1.onclick = function(){
+            frescasButtonClick();
+        }
+
+        garardSaleButton1.onclick = function(){
+            garardSaleClick();
+        }
+
+        timpetcareButton1.onclick = function(){
+            timpetcareClick();
+        }
+
+    </script>
+
+    <script>
+        let allBusinesses = document.getElementById("allBusinesses");
+        let searchResults = document.getElementById("searchResults");
+        let donationResults = document.getElementById("donationResults");
+        let resultTiles = document.getElementById("resultTiles");
+
+        let tileIcons = ["<i class='fas fa-seedling'></i>", "<i class='fas fa-store'></i>", "<i class='fas fa-tools'></i>", "<i class='fas fa-paw'></i>"];
+        let tileDescriptions = [
+            `The mission of On the Grow is to reduce carbon emmisions. Users will be
+            able to take steps to combat
+            global warming through a playful and competitive environment. The users will earn points for
+            steps they
+            take to reduce their carbon footprint, and can try to earn more points tan friends. Points will
+            be tracked
+            on a leaderboard.`,
+
+            `In light of COVID-19, farmers have been barred from selling their goods due
+            to restrictions
+            in meeting with local customers. As such, Frescas' mission is to provide an online platform
+            where farmers can
+            reach their customers locally without the restrictions of the virus.`,
+
+            `GarardSale is a garage sale for gardening and hardware supplies. However,
+            due to COVID-19,
+            GarardSale has moved online, where customers can shop and order items within the safety of their
+            homes. They
+            offer discounts for companies buying in bulk. `,
+
+            `Tim's PetCare is a local company that specializes in caring for your pets
+            while you
+            while you are unavailable. With top-notch care, your pet will be feeling extremely satisfied.
+            With COVID-19
+            restrictions however, customers, using masks, will drop off their pet in a waiting area,and they
+            will come
+            to pick them up while keeping distance and doing our jobs.`];
+        let tileButton = ["onTheGrowButton2","frescasButton2","garardSaleButton2","timpetcareButton2"]
+        let tileTitles = ["", "<p class='companyTitle hiddenTitle'>aaa</p>", "<p class='companyTitle hiddenTitle'></p>", ""];
+        let tileIconStyles = ['','style="color: rgb(72, 72, 224)"','style="color: rgb(212, 59, 59);"','style="color: rgb(216, 155, 41)"'];
+        let tileFunction = ["onTheGrowClick()","frescasButtonClick()","garardSaleClick()","timpetcareClick()"];
+
+        let listBusinesses = allBusinesses.innerText.substring(1, allBusinesses.innerText.length-1);
+        listBusinesses = listBusinesses.split(',');
+
+        let listSearchResults = searchResults.innerText.substring(1, searchResults.innerText.length-1);
+        listSearchResults = listSearchResults.split(',');
+
+        // listSearchResults = ["On the Grow", "Frescas", "GarardSale", "Tim's PetCare"];
+
+        let listDonationResults = donationResults.innerText.substring(1, donationResults.innerText.length-1);
+        listDonationResults = listDonationResults.split(',');
+
+        if(listSearchResults != ""){
+            hideAllPages();
+            searchPage.style.display = "block";
+
+            for(let i = 0; i<= listSearchResults.length-1; i++){
+                let companyNum = 0;
+                if(listSearchResults[i] == "\'On the Grow\'") {
+                    console.log("On the Grow")
+                    companyNum = 0;
+                } else if(listSearchResults[i] == "\'Frescas\'"){
+                    console.log("Frescas");
+                    companyNum = 1;
+                } else if(listSearchResults[i] == "\'GarardSale\'"){
+                    console.log("GarardSale")
+                    companyNum = 2;
+                } else{
+                    console.log("Tim's PetCare");
+                    companyNum = 3;
+                }
+                resultTiles.innerHTML += `
+                <div class="tile">
+                    <span ` + tileIconStyles[companyNum] + `class="icon is-left">
+                        ` + tileIcons[companyNum] + `
+                    </span>
+                    <p class="companyTitle"><b>` + listSearchResults[i].substring(1, listSearchResults[i].length-1) + tileTitles[companyNum] + `</b></p>
+                    <br>
+                    <p class="companydescri">` + tileDescriptions[companyNum] + `</p>
+                    <button onclick="` + tileFunction[companyNum] + `" id="`+ tileButton[companyNum] + `" class="button is-warning seeMore">
+                        <div class="icon is-small is-right">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                    </button>
+                </div>
+                `;
+
+            }
+        }
+
+        // let testResult = document.getElementById("testResult");
+        // let listTestResult = testResult.innerText.substring(1, testResult.innerText.length-1);
+        // listTestResult = listTestResult.split(',')
+
+    </script>
+
+</html>
